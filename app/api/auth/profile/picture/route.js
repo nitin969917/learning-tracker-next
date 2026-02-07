@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth';
-import { authOptions } from '../../[...nextauth]/route';
+import { authOptions } from '@/lib/auth';
 import pool from '@/lib/db';
 import { unlink } from 'fs/promises';
 import path from 'path';
