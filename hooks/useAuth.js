@@ -43,7 +43,7 @@ export const useAuth = () => {
                 return { success: true, isNewUser: false };
             }
 
-            return { success: false, error: "Unknown error during sign in" };
+            return { success: false, error: "DEBUG: " + JSON.stringify(result) };
         } catch (e) {
             console.error("Google sign in exception:", e);
             return { success: false, error: e.message };
