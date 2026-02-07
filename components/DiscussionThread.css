@@ -1,0 +1,137 @@
+.discussion-thread {
+    display: flex;
+    flex-direction: column;
+}
+
+.discussion-subtitle {
+    color: #718096;
+    margin-bottom: 2rem;
+}
+
+.comment-form {
+    margin-bottom: 3rem;
+}
+
+.comment-form .form-textarea {
+    margin-bottom: 1rem;
+    min-height: 100px;
+}
+
+.comments-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.no-comments {
+    text-align: center;
+    color: #a0aec0;
+    padding: 2rem;
+    font-style: italic;
+}
+
+.comment-item {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1.5rem;
+    border: 1px solid #e2e8f0;
+}
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+
+.comment-author strong {
+    color: #2d3748;
+    margin-right: 0.75rem;
+}
+
+.comment-date {
+    font-size: 0.85rem;
+    color: #a0aec0;
+}
+
+.comment-content {
+    color: #4a5568;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    white-space: pre-wrap;
+}
+
+.btn-delete-comment {
+    background: none;
+    border: none;
+    color: #cbd5e0;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+
+.btn-delete-comment:hover {
+    color: #e53e3e;
+    text-decoration: underline;
+}
+
+.btn-reply {
+    background: none;
+    border: none;
+    color: #667eea;
+    font-size: 0.9rem;
+    cursor: pointer;
+    padding: 0;
+    font-weight: 500;
+}
+
+.btn-reply:hover {
+    text-decoration: underline;
+}
+
+.reply-form {
+    margin-top: 1rem;
+    padding-left: 1rem;
+    border-left: 2px solid #e2e8f0;
+}
+
+.reply-form .form-textarea {
+    margin-bottom: 0.5rem;
+    min-height: 80px;
+}
+
+.replies-list {
+    margin-top: 1.5rem;
+    margin-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border-left: 2px solid #e2e8f0;
+    padding-left: 1.5rem;
+}
+
+.reply-item {
+    background: white;
+    padding: 1rem;
+    border-radius: 6px;
+    border: 1px solid #edf2f7;
+}
+
+.reply-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.reply-date {
+    font-size: 0.8rem;
+    color: #a0aec0;
+    margin-left: 0.5rem;
+}
+
+.reply-content {
+    font-size: 0.95rem;
+    color: #4a5568;
+    line-height: 1.5;
+}
