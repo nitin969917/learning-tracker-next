@@ -1,0 +1,3 @@
+{
+  "/api/notes/lecture/[lectureId]/route": "app/api/notes/lecture/[lectureId]/route.js"
+}

@@ -1,0 +1,47 @@
+{
+  "sorted_middleware": [],
+  "middleware": {
+    "/": {
+      "files": [
+        "server/edge/chunks/[root-of-the-server]__4eed7c9a._.js",
+        "server/edge/chunks/[root-of-the-server]__06bc0d52._.js",
+        "server/edge/chunks/turbopack-node_modules_next_dist_esm_build_templates_edge-wrapper_1bcbdb7e.js"
+      ],
+      "name": "middleware",
+      "page": "/",
+      "matchers": [
+        {
+          "regexp": "/:nextData(_next/data/[^/]{1,})?/dashboard/:path*{(\\\\.json)}?",
+          "originalSource": "/dashboard/:path*"
+        },
+        {
+          "regexp": "/:nextData(_next/data/[^/]{1,})?/courses/:path*{(\\\\.json)}?",
+          "originalSource": "/courses/:path*"
+        },
+        {
+          "regexp": "/:nextData(_next/data/[^/]{1,})?/lectures/:path*{(\\\\.json)}?",
+          "originalSource": "/lectures/:path*"
+        },
+        {
+          "regexp": "/:nextData(_next/data/[^/]{1,})?/profile/:path*{(\\\\.json)}?",
+          "originalSource": "/profile/:path*"
+        },
+        {
+          "regexp": "/:nextData(_next/data/[^/]{1,})?/youtube/:path*{(\\\\.json)}?",
+          "originalSource": "/youtube/:path*"
+        }
+      ],
+      "wasm": [],
+      "assets": [],
+      "env": {
+        "__NEXT_BUILD_ID": "IPY-LuD5mGShzPtsNQHnf",
+        "NEXT_SERVER_ACTIONS_ENCRYPTION_KEY": "pjroo0uZcG+QFcybQ/tOmbFIt6DZJTwj20UqXwLWsAM=",
+        "__NEXT_PREVIEW_MODE_ID": "00f1d9877e956b5ce786fc9e07873fba",
+        "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "ae54652a77e9599f675660a663de9c65a6e2669d6a2676c1684c29bf48a42caa",
+        "__NEXT_PREVIEW_MODE_SIGNING_KEY": "829d5c46ac6f573f18434e39ffa06e789a2c1e7c579b38c708cb07c8de6f2ff8"
+      }
+    }
+  },
+  "instrumentation": null,
+  "functions": {}
+}

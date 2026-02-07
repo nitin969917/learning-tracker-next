@@ -1,0 +1,10 @@
+var R=require("../../../../../chunks/[turbopack]_runtime.js")("server/app/api/discussions/lecture/[lectureId]/route.js")
+R.c("server/chunks/[root-of-the-server]__7f526efc._.js")
+R.c("server/chunks/_fd1d1970._.js")
+R.c("server/chunks/node_modules_bcryptjs_index_42ebb250.js")
+R.c("server/chunks/[root-of-the-server]__1e3445d3._.js")
+R.c("server/chunks/[root-of-the-server]__ea5d8eb0._.js")
+R.c("server/chunks/node_modules_next_f2da0d3e._.js")
+R.c("server/chunks/ce889_server_app_api_discussions_lecture_[lectureId]_route_actions_2cf41d3a.js")
+R.m(84808)
+module.exports=R.m(84808).exports
