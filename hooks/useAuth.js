@@ -30,6 +30,8 @@ export const useAuth = () => {
                 googleIdToken: credential
             });
 
+            console.log("SignIn Result Full Object:", result);
+
             if (result?.error) {
                 console.error("Sign in failed:", result.error);
                 return { success: false, error: result.error };
