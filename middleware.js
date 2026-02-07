@@ -13,6 +13,5 @@ export const config = {
         '/lectures/:path*',
         '/profile/:path*',
         '/youtube/:path*',
-        '/',
     ],
 };

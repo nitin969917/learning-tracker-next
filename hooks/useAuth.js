@@ -25,35 +25,25 @@ export const useAuth = () => {
 
     const googleSignIn = async (credential, educationalDetails) => {
         try {
-            // We pass the credential (ID Token) to our credentials provider
-            // We can also pass educationalDetails if we want to handle them (might need separate API call if provider can't handle extra data easily)
-
-            // First, if it's a new user, we might want to register them with details first.
-            // But let's verify token first via signIn
-
             const result = await signIn('credentials', {
                 redirect: false,
                 googleIdToken: credential
             });
 
             if (result?.error) {
+                console.error("Sign in failed:", result.error);
                 return { success: false, error: result.error };
             }
 
-            // If we have educational details and it was a new user (how do we know? maybe checking session created date or if profile is empty?)
-            // For now, if educationalDetails are provided, we can try to update profile.
-            if (educationalDetails) {
-                // Call a separate API to update details
-                // We need to wait for session to update? 
-                // It's a bit of a race condition.
-                // Simplest: Just let them update in profile later or do a fire-and-forget call if session is established.
-                // Actually `signIn` establishes session.
+            if (result?.ok) {
+                // You might want to do something here, like force a session update if needed
+                // mostly session updates automatically.
+                return { success: true, isNewUser: false };
             }
 
-            // Check if user is new is hard without return from signIn.
-            // Assumption: Success.
-            return { success: true, isNewUser: false }; // We don't know if new, but flow continues.
+            return { success: false, error: "Unknown error during sign in" };
         } catch (e) {
+            console.error("Google sign in exception:", e);
             return { success: false, error: e.message };
         }
     };

@@ -73,7 +73,7 @@ const GoogleSignIn = ({ onSuccess, showEducationalForm = false }) => {
                 }
             } else {
                 console.error("Google Sign In Error Result:", result);
-                setError(typeof result.error === 'string' ? result.error : 'Google sign-in failed');
+                setError(result.error || 'Google sign-in failed');
                 setLoading(false);
             }
         } catch (err) {
