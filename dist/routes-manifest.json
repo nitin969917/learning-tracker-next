@@ -182,6 +182,12 @@
       "namedRegex": "^/api/youtube/search(?:/)?$"
     },
     {
+      "page": "/api/youtube/suggestions",
+      "regex": "^/api/youtube/suggestions(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/youtube/suggestions(?:/)?$"
+    },
+    {
       "page": "/courses",
       "regex": "^/courses(?:/)?$",
       "routeKeys": {},

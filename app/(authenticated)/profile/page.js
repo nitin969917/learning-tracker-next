@@ -364,11 +364,9 @@ export default function ProfilePage() {
 
                                 <div className="form-row">
                                     <div className="form-group">
-                                        <label className="form-label">Field of Study</label>
-                                        <input
-                                            type="text"
-                                            className="form-input"
-                                            placeholder="e.g., Computer Science"
+                                        <label className="form-label">Field of Study (Branch)</label>
+                                        <select
+                                            className="form-select"
                                             value={educationalDetails.field_of_study}
                                             onChange={(e) =>
                                                 setEducationalDetails({
@@ -376,7 +374,17 @@ export default function ProfilePage() {
                                                     field_of_study: e.target.value
                                                 })
                                             }
-                                        />
+                                        >
+                                            <option value="">Select Branch</option>
+                                            <option value="Computer Science">Computer Science</option>
+                                            <option value="Information Technology">Information Technology</option>
+                                            <option value="Electronics & Communication">Electronics & Communication</option>
+                                            <option value="Mechanical Engineering">Mechanical Engineering</option>
+                                            <option value="Civil Engineering">Civil Engineering</option>
+                                            <option value="Electrical Engineering">Electrical Engineering</option>
+                                            <option value="Data Science & AI">Data Science & AI</option>
+                                            <option value="Other">Other</option>
+                                        </select>
                                     </div>
 
                                     <div className="form-group">
@@ -440,7 +448,7 @@ export default function ProfilePage() {
                                         )}
                                         {user.field_of_study && (
                                             <div className="detail-item">
-                                                <span className="detail-label">Field of Study:</span>
+                                                <span className="detail-label">Branch/Field of Study:</span>
                                                 <span className="detail-value">{user.field_of_study}</span>
                                             </div>
                                         )}

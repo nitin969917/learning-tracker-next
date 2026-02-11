@@ -27,5 +27,6 @@
   "/api/revisions/lecture/[lectureId]/route": "app/api/revisions/lecture/[lectureId]/route.js",
   "/api/revisions/route": "app/api/revisions/route.js",
   "/api/youtube/search/route": "app/api/youtube/search/route.js",
+  "/api/youtube/suggestions/route": "app/api/youtube/suggestions/route.js",
   "/page": "app/page.js"
 }

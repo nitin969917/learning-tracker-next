@@ -20,6 +20,8 @@ export default function YouTubeResourcesPage() {
     const [newUrl, setNewUrl] = useState('');
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
+    const [suggestedResources, setSuggestedResources] = useState([]);
+    const [fetchingSuggestions, setFetchingSuggestions] = useState(false);
 
     // Preview Modal State
     const [previewVideo, setPreviewVideo] = useState(null); // { id, title }
@@ -28,7 +30,23 @@ export default function YouTubeResourcesPage() {
 
     useEffect(() => {
         fetchResources();
+        fetchSuggestions();
     }, []);
+
+    const fetchSuggestions = async () => {
+        setFetchingSuggestions(true);
+        try {
+            const response = await fetch('/api/youtube/suggestions');
+            if (response.ok) {
+                const data = await response.json();
+                setSuggestedResources(data);
+            }
+        } catch (err) {
+            console.error('Failed to fetch suggestions:', err);
+        } finally {
+            setFetchingSuggestions(false);
+        }
+    };
 
     const fetchResources = async () => {
         try {
@@ -159,6 +177,12 @@ export default function YouTubeResourcesPage() {
                     >
                         Browse YouTube
                     </button>
+                    <button
+                        className={`tab-btn ${activeTab === 'suggestions' ? 'active' : ''}`}
+                        onClick={() => setActiveTab('suggestions')}
+                    >
+                        Suggested for You
+                    </button>
                 </div>
 
                 {error && <div className="error-msg global-error">{error}</div>}
@@ -220,6 +244,60 @@ export default function YouTubeResourcesPage() {
                     </>
                 )}
 
+                {activeTab === 'suggestions' && (
+                    <div className="suggestions-section">
+                        <div className="section-header-row">
+                            <h3>Recommended for your Branch</h3>
+                            <button
+                                className="btn btn-sm btn-secondary"
+                                onClick={fetchSuggestions}
+                                disabled={fetchingSuggestions}
+                            >
+                                {fetchingSuggestions ? 'Refreshing...' : 'Refresh'}
+                            </button>
+                        </div>
+
+                        {fetchingSuggestions && suggestedResources.length === 0 ? (
+                            <div className="loading">Finding best resources for your background...</div>
+                        ) : (
+                            <div className="search-results-grid">
+                                {suggestedResources.map(item => (
+                                    <div key={item.id} className="search-card">
+                                        <div className="search-thumb" onClick={() => openPreview(item)}>
+                                            <img src={item.thumbnail} alt={item.title} />
+                                            <span className="resource-type-badge">{item.type}</span>
+                                            <div className="play-overlay">▶</div>
+                                        </div>
+                                        <div className="search-info">
+                                            <h3 dangerouslySetInnerHTML={{ __html: item.title }}></h3>
+                                            <p className="channel-name">{item.channelTitle}</p>
+                                            <div className="search-actions">
+                                                <button
+                                                    className={`btn btn-sm btn-secondary preview-btn`}
+                                                    onClick={() => openPreview(item)}
+                                                >
+                                                    Preview
+                                                </button>
+                                                <button
+                                                    className="btn btn-sm btn-primary add-btn"
+                                                    onClick={() => handleAddFromSearch(item)}
+                                                    disabled={importing}
+                                                >
+                                                    {importing ? 'Adding...' : '+ Add'}
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))}
+                                {suggestedResources.length === 0 && !fetchingSuggestions && (
+                                    <div className="no-results">
+                                        No specific suggestions found. Try updating your branch in the Profile.
+                                    </div>
+                                )}
+                            </div>
+                        )}
+                    </div>
+                )}
                 {activeTab === 'browse' && (
                     <div className="browse-section">
                         <form onSubmit={handleSearch} className="search-form">

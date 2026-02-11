@@ -333,6 +333,28 @@
     border-color: #e53e3e;
 }
 
+/* Suggestions Section */
+.suggestions-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.section-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.section-header-row h3 {
+    margin: 0;
+    color: #2d3748;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .import-form {

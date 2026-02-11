@@ -27,5 +27,6 @@
   "/api/revisions/lecture/[lectureId]/route": "/api/revisions/lecture/[lectureId]",
   "/api/revisions/route": "/api/revisions",
   "/api/youtube/search/route": "/api/youtube/search",
+  "/api/youtube/suggestions/route": "/api/youtube/suggestions",
   "/page": "/"
 }
